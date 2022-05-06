@@ -4,13 +4,10 @@
 	import { mode } from "../stores";
 	import { modeData, timeRemaining } from "../utils";
 	import GameIcon from "./GameIcon.svelte";
-	import type { Toaster } from "./widgets";
 
 	export let showStats: boolean;
 	export let tutorial: boolean;
 	export let showRefresh: boolean;
-
-	export let toaster = getContext<Toaster>("toaster");
 
 	const dispatch = createEventDispatcher();
 	mode.subscribe((m) => {
@@ -24,6 +21,16 @@
 	<h1>
 		wordle cz
 	</h1>
+	<div class="icons">
+		{#if showStats}
+			<GameIcon onClick={() => dispatch("stats")}>
+				<path
+					transition:fade={{ duration: 200 }}
+					d="M16,11V3H8v6H2v12h20V11H16z M10,5h4v14h-4V5z M4,11h4v8H4V11z M20,19h-4v-6h4V19z"
+				/>
+			</GameIcon>
+		{/if}
+		</div>
 	{#if tutorial}
 		<div transition:scale class="tutorial" on:click={() => dispatch("closeTutPopUp")}>
 			Tap WORDLE+ to change game mode

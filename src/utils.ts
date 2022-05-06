@@ -1,9 +1,9 @@
 import seedrandom from "seedrandom";
 import { GameMode, ms } from "./enums";
-import wordList from "./words_5";
+import wordList from "./words_4";
 
 export const ROWS = 6;
-export const COLS = 5;
+export const COLS = 4;
 
 export const words = {
 	...wordList,
@@ -259,7 +259,7 @@ export function createNewGame(mode: GameMode): GameState {
 export function createDefaultSettings(): Settings {
 	return {
 		hard: new Array(modeData.modes.length).map(() => false),
-		dark: true,
+		dark: false,
 		colorblind: false,
 		tutorial: 3,
 	};

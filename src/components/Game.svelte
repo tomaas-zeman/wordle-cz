@@ -60,7 +60,7 @@
 
 	function submitWord() {
 		if (game.board.words[game.guesses].length !== COLS) {
-			toaster.pop("Not enough letters");
+			toaster.pop("Příliš málo písmen");
 			board.shake(game.guesses);
 		} else if (words.contains(game.board.words[game.guesses])) {
 			if (game.guesses > 0) {
@@ -93,7 +93,7 @@
 			if (game.board.words[game.guesses - 1] === word) win();
 			else if (game.guesses === ROWS) lose();
 		} else {
-			toaster.pop("Not in word list");
+			toaster.pop("Slovo není ve slovníku. Zkus jiné");
 			board.shake(game.guesses);
 		}
 	}

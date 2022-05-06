@@ -8,7 +8,7 @@
 	export let state: GameState;
 	const toaster = getContext<Toaster>("toaster");
 
-	$: stats = `${modeData.modes[$mode].name} Wordle+ #${state.wordNumber} ${
+	$: stats = `${modeData.modes[$mode].name} Wordle CZ #${state.wordNumber} ${
 		failed(state) ? "X" : state.guesses
 	}/${state.board.words.length}\n\n    ${state.board.state
 		.slice(0, state.guesses)
@@ -22,7 +22,7 @@
 		toaster.pop("Copied");
 	}}
 >
-	share
+	Sdílej
 	<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
 		<path
 			fill="white"

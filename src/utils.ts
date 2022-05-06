@@ -234,12 +234,12 @@ export function seededRandomInt(min: number, max: number, seed: number) {
 export const DELAY_INCREMENT = 200;
 
 export const PRAISE = [
-	"Genius",
-	"Magnificent",
-	"Impressive",
-	"Splendid",
-	"Great",
-	"Phew",
+	"Geniální",
+	"Skvostný",
+	"Působivý",
+	"Skvělý",
+	"Dobrý",
+	"Noo...o fous",
 ];
 
 export function createNewGame(mode: GameMode): GameState {

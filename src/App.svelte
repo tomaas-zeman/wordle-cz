@@ -90,7 +90,7 @@
 	}
 	let toaster: Toaster;
 
-	document.title = "Wordle+ | An infinite word guessing game";
+	document.title = "Wordle CZ - na 4 písmena";
 </script>
 
 <Toaster bind:this={toaster} />

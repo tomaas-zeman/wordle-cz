@@ -8,10 +8,10 @@
 	let stats: [string, string | number][];
 	$: {
 		stats = [
-			["Played", data.played],
-			["Win %", Math.round(((data.played - data.guesses.fail) / data.played) * 100) || 0],
+			["Odehráno", data.played],
+			["Vyhráno %", Math.round(((data.played - data.guesses.fail) / data.played) * 100) || 0],
 			[
-				"Average Guesses",
+				"Průměrný počet pokusů",
 				(
 					Object.entries(data.guesses).reduce((a, b) => {
 						if (!isNaN(parseInt(b[0]))) {
@@ -23,16 +23,16 @@
 			],
 		];
 		if (data.guesses.fail > 0) {
-			stats.push(["Lost", data.guesses.fail]);
+			stats.push(["Neuhodnutých", data.guesses.fail]);
 		}
 		if ("streak" in data) {
-			stats.push(["Current Streak", data.streak]);
-			stats.push(["Max Streak", data.maxStreak]);
+			stats.push(["Současná série", data.streak]);
+			stats.push(["Nejdelší série", data.maxStreak]);
 		}
 	}
 </script>
 
-<h3>Statistics ({modeData.modes[$mode].name})</h3>
+<h3>Statistiky ({modeData.modes[$mode].name})</h3>
 <div>
 	{#each stats as stat}
 		<Stat name={stat[0]} stat={stat[1]} />

@@ -1,6 +1,6 @@
 import seedrandom from "seedrandom";
 import { GameMode, ms } from "./enums";
-import wordList from "./words.test";
+import wordList from "./words_4";
 
 export const ROWS = 6;
 export const COLS = 4;

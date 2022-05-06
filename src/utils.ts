@@ -1,6 +1,6 @@
 import seedrandom from "seedrandom";
 import { GameMode, ms } from "./enums";
-import wordList from "./words_4";
+import wordList from "./words.test";
 
 export const ROWS = 6;
 export const COLS = 4;
@@ -163,7 +163,7 @@ export function contractNum(n: number) {
 	}
 }
 
-export const keys = ["qwertyuiop", "asdfghjkl", "zxcvbnm"];
+export const keys = ["áéíóúůžščřďťň", "qwertyuiop", "asdfghjkl", "zxcvbnm"];
 
 export function newSeed(mode: GameMode) {
 	const now = Date.now();
@@ -315,6 +315,21 @@ export function createLetterStates(): { [key: string]: LetterState; } {
 		x: "🔳",
 		y: "🔳",
 		z: "🔳",
+		ě: "🔳",
+		š: "🔳",
+		č: "🔳",
+		ř: "🔳",
+		ž: "🔳",
+		ý: "🔳",
+		á: "🔳",
+		í: "🔳",
+		é: "🔳",
+		ú: "🔳",
+		ů: "🔳",
+		ó: "🔳",
+		ď: "🔳",
+		ť: "🔳",
+		ň: "🔳",
 	};
 }
 

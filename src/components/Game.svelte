@@ -194,7 +194,7 @@
 			showStats = false;
 			showSettings = false;
 		}}
-		disabled={!game.active || $settings.tutorial === 3}
+		disabled={!game.active}
 	/>
 </main>
 

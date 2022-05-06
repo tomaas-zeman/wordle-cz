@@ -23,7 +23,7 @@
 	}
 	function handleKeystroke(e: KeyboardEvent) {
 		if (!disabled && !e.ctrlKey && !e.altKey) {
-			if (e.key && /^[a-z]$/.test(e.key.toLowerCase())) {
+			if (e.key && /^[a-záéíóúůžščřďťň]$/.test(e.key.toLowerCase())) {
 				return appendValue(e.key.toLowerCase());
 			}
 			if (e.key === "Backspace") return backspaceValue();
@@ -63,8 +63,17 @@
 		{/each}
 	</div>
 	<div class="row">
-		<Key letter="ENTER" on:keystroke={() => !disabled && dispatch("submitWord")} />
 		{#each keys[2] as letter}
+			<Key
+				{letter}
+				on:keystroke={(e) => appendValue(e.detail)}
+				state={$letterStates[letter]}
+			/>
+		{/each}
+	</div>
+	<div class="row">
+		<Key letter="ENTER" on:keystroke={() => !disabled && dispatch("submitWord")} />
+		{#each keys[3] as letter}
 			<Key
 				{letter}
 				on:keystroke={(e) => appendValue(e.detail)}

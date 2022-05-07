@@ -23,7 +23,7 @@
 	}
 	function handleKeystroke(e: KeyboardEvent) {
 		if (!disabled && !e.ctrlKey && !e.altKey) {
-			if (e.key && /^[a-záéíóúůžščřďťň]$/.test(e.key.toLowerCase())) {
+			if (e.key && /^[a-záéíýóúůžščřďťň]$/.test(e.key.toLowerCase())) {
 				return appendValue(e.key.toLowerCase());
 			}
 			if (e.key === "Backspace") return backspaceValue();

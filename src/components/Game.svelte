@@ -224,7 +224,7 @@
 	</Seperator>
 	<ShareGame wordNumber={game.wordNumber} />
 	{#if !game.active}
-		<Definition {word} alternates={2} />
+		<Definition {word} />
 	{:else}
 		<!-- Fade with delay is to prevent a bright red button from appearing as soon as refresh is pressed -->
 		<div in:fade={{ delay: 300 }} class="concede" on:click={concede}>give up</div>
